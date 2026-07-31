@@ -12,7 +12,7 @@ const uploadOnCloudinary= async(filepath)=>{
         if(!filepath){
             return null;
         }
-        const response= await cloudinary.uploader.upload(filepath,{resource_type:"auto"})
+        const response= await cloudinary.uploader.upload(filepath,{folder: "videotube"})
         fs.unlinkSync(filepath)
         console.log("File is uploaded on cloudinary")
         return response;
